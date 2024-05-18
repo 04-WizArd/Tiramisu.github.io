@@ -1,3 +1,14 @@
+""""
+
+
+                                                  TRAVAIL PRATIQUE DE MACHINE LEARNING 
+                                                  =====================================
+                                                RESOLUTION QUESTION N°1 : Prédicrion iris
+                                                    =================================
+
+"""
+
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,20 +21,16 @@ from sklearn.svm import SVC
 
 
 # chargement du dataset
-url = "ML/UCI.csv"
+url = "ML/iris.csv"
 data = pd.read_csv(url, names=["sepal_length", "sepal_width", "petal_length", "petal_width", "species"])
 
-
-# Afficher les dimensions du jeu de données
+# Aperçu des données
 print(data.shape)
 
-# Aperçu des données
 print(data.head())
 
-# Résumé statistique
 print(data.describe())
 
-# Répartition des données par rapport à la variable de classe
 print(data["species"].value_counts())
 
 # Histogrammes pour chaque caractéristique
@@ -73,6 +80,7 @@ cart_pred = cart_model.predict(X_test)
 
 # Prédictions du modèle SVM
 svm_pred = svm_model.predict(X_test)
+
 
 # Évaluer la précision du modèle de régression logistique
 lr_accuracy = accuracy_score(y_test, lr_pred)
